@@ -1,0 +1,36 @@
+{
+  "services": {
+    "cloudantNoSQLDB": [
+      {
+        "credentials": {
+          "url":"CLOUDANT_DATABASE_URL"
+        },
+        "label": "cloudantNoSQLDB"
+      }
+    ],
+      "dynamic-dashboard-embedded": [
+          {
+              "label": "dynamic-dashboard-embedded",
+              "provider": null,
+              "plan": "lite",
+              "name": "IBM Cognos Dashboard Embedded-cv",
+              "tags": [
+              ],
+              "instance_name": "IBM Cognos Dashboard Embedded-cv",
+              "binding_name": null,
+              "credentials": {
+				  "api_endpoint_url": "https://us-south.dynamic-dashboard-embedded.cloud.ibm.com/daas/",
+				  "apikey": "s7fGKgAIx-rJYtOubRPIqLE5tsCXy--RX5ajn2Z0eqom",
+				  "client_id": "b773013b-8dba-4619-81bd-8779dbd0b810",
+				  "client_secret": "7b631bf4d5836940afbd0c490c1d948c1860f221",
+				  "iam_apikey_description": "Auto-generated for key a23fc5b4-fd8d-481a-8766-0723a11ac1f8",
+				  "iam_apikey_name": "Credenciales de servicio-1",
+				  "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+				  "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/040fa787cb814b219d79333854c45eaf::serviceid:ServiceId-3f6e185b-0e73-416c-9ae5-22d0f8d20e77"
+				},
+              "syslog_drain_url": null,
+              "volume_mounts": []
+          }
+      ]
+  }
+}
