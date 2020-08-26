@@ -36,8 +36,8 @@ app.use (function (req, res, next) {
 app.use(express.static(__dirname + "/dist"));
 
 // default client_id/secret from environment variables. VCAP_SERVICES will override later if available
-var dde_client_id = process.env.DDE_CLIENT_ID;
-var dde_client_secret = process.env.DDE_SECRET;
+var dde_client_id = "b773013b-8dba-4619-81bd-8779dbd0b810";//process.env.DDE_CLIENT_ID;
+var dde_client_secret = "7b631bf4d5836940afbd0c490c1d948c1860f221";//process.env.DDE_SECRET;
 
 console.log("ENVIROMENT: "+env);
 
@@ -53,15 +53,15 @@ app.post("/api/dde/session", function(request, response) {
   console.log(dde_client_id);
   var options = {
     method: "POST",
-    uri: conf.dde_session_uri,
+    uri: "https://dde-us-south.analytics.ibm.com/daas/v1/session", //conf.dde_session_uri,
     headers: {
-      "Authorization": "Basic " + new Buffer(dde_client_id + ":" + dde_client_secret).toString("base64"),
+      "Authorization": "Basic " + "Yjc3MzAxM2ItOGRiYS00NjE5LTgxYmQtODc3OWRiZDBiODEwOjdiNjMxYmY0ZDU4MzY5NDBhZmJkMGM0OTBjMWQ5NDhjMTg2MGYyMjE=",//new Buffer(dde_client_id + ":" + dde_client_secret).toString("base64"),
       "content-type": "application/json"
     },
     body: {
       "expiresIn": 3600,
-      webDomain: conf.web_domain
-      //"webDomain": "http://localhost:3000" // for local testing
+      //webDomain: conf.web_domain-
+      "webDomain": "http://localhost:3000" // for local testing
       //"webDomain": "https://{app-name}.mybluemix.net" // for deployment
     },
     json: true // Automatically stringifies the body to JSON
@@ -110,11 +110,11 @@ if (appEnv.services["dynamic-dashboard-embedded"] || appEnv.getService(/dynamic-
   if (appEnv.services["dynamic-dashboard-embedded"]) {
     // CF service named "dynamic-dashboard-embedded"
     ddecred = appEnv.services["dynamic-dashboard-embedded"][0].credentials;
-    //console.log("cf service dde credentials: " + JSON.stringify(ddecred));
+    console.log("cf service dde credentials: " + JSON.stringify(ddecred));
   } else {
     // user-provided service with "dynamic-dashboard-embedded" in its name
     ddecred = appEnv.getService(/dynamic-dashboard-embedded/).credentials;
-    //console.log("user provided service dde credentials: " + ddecred);
+    console.log("user provided service dde credentials: " + ddecred);
   }
 
   dde_client_id = ddecred.client_id;
