@@ -19,7 +19,7 @@
               "instance_name": "IBM Cognos Dashboard Embedded-cv",
               "binding_name": null,
               "credentials": {
-				  "api_endpoint_url": "https://us-south.dynamic-dashboard-embedded.cloud.ibm.com/daas/",
+				  "api_endpoint_url": "https://ddetest-us-south.analytics.ibm.com/daas/",
 				  "apikey": "s7fGKgAIx-rJYtOubRPIqLE5tsCXy--RX5ajn2Z0eqom",
 				  "client_id": "b773013b-8dba-4619-81bd-8779dbd0b810",
 				  "client_secret": "7b631bf4d5836940afbd0c490c1d948c1860f221",
