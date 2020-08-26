@@ -6,7 +6,8 @@
 export const environment = {
   production: false,
   cognos_api_js: 'https://ddetest-us-south.analytics.ibm.com/daas/CognosApi.js',
-  cognos_root_url: 'https://ddetest-us-south.analytics.ibm.com/daas/',
+  //cognos_root_url: 'https://ddetest-us-south.analytics.ibm.com/daas/',
+  cognos_root_url: 'https://dde-us-south.analytics.ibm.com/daas/',
   //For proxy mode
   //cognos_api_js: 'http://localhost:3000/daas/CognosApi.js',
   //cognos_root_url: 'http://localhost:3000/daas/',
